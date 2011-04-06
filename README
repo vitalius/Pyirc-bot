@@ -20,3 +20,5 @@ The bot will join the channel and respond to following commands:
   ~about <term> - Returns terms defenition if it has one
 
   ~tyme - returns server time
+
+  ~bs - generate a merketing term
