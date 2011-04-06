@@ -1,0 +1,12 @@
+This is a simple IRC bot in Python
+
+Once the nickname, network and channel have been specified in pyirc-bot.py
+
+The bot will join the channel and respond to following commands:
+
+  ~say
+  ~bauer
+  ~stfu
+  ~lolcount
+  ~{is,would}
+
