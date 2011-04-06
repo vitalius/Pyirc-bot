@@ -35,6 +35,3 @@ class Fortune(action.Action):
         lst = ["Yes!", "Defenetly NO!", "Maybe...", "Ask me again, later"]
         return lst[random.randint(0,len(lst)-1)]
 	
-#i = ":ezeki3l!i=pavlenko@c-24-22-56-210.hsd1.wa.comcast.net PRIVMSG #testb0tchannel :~would"
-#n = Fortune()
-#print n.perform(i)

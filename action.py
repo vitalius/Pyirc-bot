@@ -96,8 +96,8 @@ class Action:
 
 #### DEBUG #####
 
-#line1 = ":go|dfish!n=goldfish@minerva.redbrick.dcu.ie PRIVMSG #ls-dj :lol"
-#line2 = ":ezeki3l!i=pavlenko@c-24-22-56-210.hsd1.wa.comcast.net PRIVMSG anna_bot :hi"
+#line1 = ":go|dfish!n=goldfish@host.net PRIVMSG #ls-dj :lol"
+#line2 = ":vitalius!i=vitaliy@host.net PRIVMSG anna_bot :hi"
 
 #a = Action()
 #print a.ircfy(line1, "hello")

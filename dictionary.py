@@ -37,11 +37,4 @@ class Dict(action.Action):
             return key + ": " + self.dictionary[key]
         except KeyError:
             return "I don't know '" + key + "'"
-        
-        
-#i = ":ezeki3l!i=pavlenko@c-24-22-56-210.hsd1.wa.comcast.net PRIVMSG #testb0tchannel :~define cats: white"
-#u = ":ezeki3l!i=pavlenko@c-24-22-56-210.hsd1.wa.comcast.net PRIVMSG #ls-dj :~about cats"
-#n = Dict()
-#print n.perform(i)
-#print n.perform(u)
                     

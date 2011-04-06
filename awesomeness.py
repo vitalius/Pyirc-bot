@@ -9,7 +9,11 @@ class Awesomeness(action.Action):
 	
 	def __init__(self):
 		self.nicknames = {}
-                self.quotes = ["You are awesome", "I totally agree", "Keep up the good work Mr.Awesomeness", "Yes! I agree, you're awesome", "Nobody could have said it better!", "Hawkman is proud of you, you're da best!", "Uh-huh. Wisdom. Speak It!"]
+                self.quotes = ["You are awesome", 
+                               "I totally agree", 
+                                "Keep up the good work you are awesomeness", 
+                                "Yes! I agree, you're awesome", 
+                                "Nobody could have said it better!"]
 		return
 	
 	def perform(self, command):
@@ -41,12 +45,3 @@ class Awesomeness(action.Action):
 			return self.ircfy(input, ""+nick+", "+self.pick_rand(self.quotes)+"!")
 		return
 
-"""
-i = ":ezeki3l!i=pavlenko@c-24-22-56-210.hsd1.wa.comcast.net PRIVMSG #testb0tchannel :~define cats: white"
-u = ":ezeki3l!i=pavlenko@c-24-22-56-210.hsd1.wa.comcast.net PRIVMSG #ls-dj :~about cats"
-n = Awesomeness()
-print n.perform(i)
-print n.perform(i)
-print n.perform(i)
-print n.perform(u)
-""" 

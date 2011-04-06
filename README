@@ -4,9 +4,19 @@ Once the nickname, network and channel have been specified in pyirc-bot.py
 
 The bot will join the channel and respond to following commands:
 
-  ~say
-  ~bauer
-  ~stfu
-  ~lolcount
-  ~{is,would}
+  ~say <string> - Repeats <string>
 
+  ~bauer - Queries and returns Jack Bauer quote
+
+  ~stfu - Shuts up for 1 min
+
+  ~lolcount - returns number of lols it has seen
+
+  ~{is,should,would} - Fortune, ask a question begining with {is,should,would}
+     <vitalius> ~is pyirc-bot awesome?
+     <pyirc-bot> Maybe...
+
+  ~define <term> <def> - Defines a term
+  ~about <term> - Returns terms defenition if it has one
+
+  ~tyme - returns server time
