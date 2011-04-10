@@ -16,7 +16,7 @@ The bot will join the channel and respond to following commands:
      <vitalius> ~is pyirc-bot awesome?
      <pyirc-bot> Maybe...
 
-  ~define <term> <def> - Defines a term
+  ~define <term>:<def> - Defines a term
   ~about <term> - Returns terms defenition if it has one
 
   ~tyme - returns server time
