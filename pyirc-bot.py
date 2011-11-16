@@ -12,6 +12,7 @@ import stfu
 import bs_generator
 import awesomeness
 import fortune
+import shakespearean_insult
 
 LIVE = 0
 MUTE = 1
@@ -110,16 +111,22 @@ class PyIRCbot:
       buf = self.readData()
       print buf.strip() # log, print everything to stdout
 
-
-ircbot = PyIRCbot("irc.freenode.org", 6667, "botAnna", "ls-dj")
-ircbot.installAction(say.Say())
-ircbot.installAction(bauer.Bauer())
-ircbot.installAction(tyme.Tyme())
-ircbot.installAction(pingpong.PingPong())
-ircbot.installAction(dictionary.Dict())
-ircbot.installAction(lolcount.lolCount())
-ircbot.installAction(stfu.Stfu())
-ircbot.installAction(bs_generator.BS())
-ircbot.installAction(awesomeness.Awesomeness())
-ircbot.installAction(fortune.Fortune())
-ircbot.run()
+while True:
+  try:
+    ircbot = PyIRCbot("irc.freenode.org", 6667, "botAnna", "ls-dj")
+    ircbot.installAction(say.Say())
+    ircbot.installAction(bauer.Bauer())
+    ircbot.installAction(tyme.Tyme())
+    ircbot.installAction(pingpong.PingPong())
+    ircbot.installAction(dictionary.Dict())
+    ircbot.installAction(lolcount.lolCount())
+    ircbot.installAction(stfu.Stfu())
+    ircbot.installAction(bs_generator.BS())
+    ircbot.installAction(awesomeness.Awesomeness())
+    ircbot.installAction(fortune.Fortune())
+    ircbot.installAction(shakespearean_insult.SI())
+    ircbot.run()
+  except:
+    pass
+ 
+  
