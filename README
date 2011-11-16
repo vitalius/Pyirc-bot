@@ -22,3 +22,7 @@ The bot will join the channel and respond to following commands:
   ~tyme - returns server time
 
   ~bs - generate a merketing term
+ 
+  ~si - generate a Shakesperian insult
+
+        Example: < botAnna> lol vitalius, you impertinent unchin-snouted malt-worm!
