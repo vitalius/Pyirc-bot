@@ -26,3 +26,5 @@ The bot will join the channel and respond to following commands:
   ~si - generate a Shakesperian insult
 
         Example: < botAnna> lol vitalius, you impertinent unchin-snouted malt-worm!
+
+![](https://github.com/vitalius/Pyirc-bot/raw/master/pyircbot.png)
