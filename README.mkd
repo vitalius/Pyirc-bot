@@ -1,9 +1,7 @@
 Simple IRC bot in Python
 ========================
 
-Once the nickname, network and channel have been specified in pyirc-bot.py
-
-The bot will join the channel and respond to following commands:
+Once a nickname, network and channel have been specified in pyirc-bot.py, this bot joins a channel and responds to the following commands:y
 
   ~say <string> - Repeats <string>
 
