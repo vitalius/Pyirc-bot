@@ -1,20 +1,21 @@
-import urllib
+from urllib.request import urlopen
 import re
 
 """ Get a random jack bauer quote from the web """
 def get_bauer_from_web():
-  url = urllib.urlopen("http://www.notrly.com/jackbauer/")
-  strng = url.read()
+  url = urlopen("https://www.notrly.com/jackbauer/")
+  strng = str(url.read())
   url.close()
 
-  m = re.search(".*p class=\"fact\".*", strng)
+  m = re.search("p class=\"fact\".*", strng)
   quote = strng[m.start():m.end()]
-  m = re.search(".*\">", quote)
+  m = re.search(".*fact\">", quote)
   quote = quote[m.end():]
   m = re.search("<.*", quote)
   quote = quote[:m.start()]
 
-  quote = quote.replace("&quot;", "\"");
+  quote = quote.replace("&quot;", "\"")
+  quote = quote.replace("\\", "")
   return quote
 
-#print get_bauer_from_web()
+#quprint get_bauer_from_web()

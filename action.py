@@ -7,7 +7,7 @@ class Action:
     """ Extract the IRC header information of the message """
     def get_header(self, input):
         
-        src = re.search("^:.*?:", input)
+        src = re.search("^.*:.*?:", str(input))
         if src != None:
             return input[src.start():src.end()]
         else:
@@ -22,9 +22,9 @@ class Action:
             return None
         
         # find nickname
-        src = re.search("^:.*\!", header)
+        src = re.search("^.*:.*\!", str(header))
         if src != None:
-            return header[src.start()+1:src.end()-1]
+            return header[src.start()+3:src.end()-1]
     
         return None
 
@@ -37,7 +37,7 @@ class Action:
             return None
             
         # find hostname
-        src = re.search("![^ ]*", header)
+        src = re.search("![^ ]*", str(header))
         if src != None:
             return header[src.start()+3:src.end()]
     
@@ -52,7 +52,7 @@ class Action:
             return None
     
         # find channel
-        src = re.search("#.*:", header)
+        src = re.search("#.*:", str(header))
         if src != None:
             return header[src.start()+1:src.end()-2]
     
@@ -87,11 +87,11 @@ class Action:
         return None
     
     def print_info(self, input):
-        print "DEBUG: Action requested:"
-        if (self.get_nickname(input) != None) : print "  By: " + self.get_nickname(input)
-        if (self.get_hostname(input) != None) : print "From: " + self.get_hostname(input)
-        if (self.get_channel(input) != None) : print "Chan: " + self.get_channel(input)
-        if (self.get_text(input) != None) : print "Text: " + self.get_text(input)
+        print("DEBUG: Action requested:")
+        if (self.get_nickname(input) != None) : print("  By: " + self.get_nickname(input))
+        if (self.get_hostname(input) != None) : print("From: " + self.get_hostname(input))
+        if (self.get_channel(input) != None) : print("Chan: " + self.get_channel(input))
+        if (self.get_text(input) != None) : print("Text: " + self.get_text(input))
 
 
 #### DEBUG #####

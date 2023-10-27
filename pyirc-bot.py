@@ -37,12 +37,12 @@ class PyIRCbot:
     self.buffsize = 4096
     self.actions = []
 
-    self.state = LIVE;
+    self.state = LIVE
     self.mute_start = 0
     self.mute_finish = 0
     self.duration = 0
     
-    self.connect(server, port);
+    self.connect(server, port)
 
   """ Build a TCP/IP connection to the irc server specified by 'host' and 'port'
   connection is made based on the RFC protocol
@@ -52,17 +52,17 @@ class PyIRCbot:
 
     self.socket.connect((host,port))
     self.sendData("NICK " + self.nickname + " \r\n")
-    self.sendData("USER anna tolmoon tolson :Ronnie Reagan \r\n")
+    self.sendData("USER w00t tolmoon tolson :Ronnie Reagan \r\n")
     self.sendData("JOIN #" + self.channel + " \r\n")
 
   
   """ Send data to socket stream if a connection was made """  
   def sendData(self, data):
     if self.socket == None:
-      print "Error: Non-existing socket"
+      print("Error: Non-existing socket")
       return
 
-    self.socket.send(data)
+    self.socket.send(data.encode('utf-8'))
     return
 
 
@@ -85,7 +85,7 @@ class PyIRCbot:
   """ Reads and returns the socket buffer, specified by the 'buffsize' """
   def readData(self):
     if self.socket == None:
-      print "Error: Non-existing socket"
+      print("Error: Non-existing socket")
       return
     
     self.buffer = self.socket.recv(self.buffsize)
@@ -101,19 +101,19 @@ class PyIRCbot:
       for a in self.actions:
         if a.get_nickname(buf) == self.nickname:
           break
-        result = a.perform(buf)
+        result = a.perform(str(buf))
         if result != None:
           self.setMute(result) # check mute flag
           if self.checkMute() == False:
             self.sendData(result)
-          print result.strip()
+          print(result.strip())
           
       buf = self.readData()
-      print buf.strip() # log, print everything to stdout
+      print(buf.strip()) # log, print everything to stdout
 
 while True:
   try:
-    ircbot = PyIRCbot("irc.freenode.org", 6667, "botAnna", "ls-dj")
+    ircbot = PyIRCbot("irc.libera.chat", 6667, "adom-gadol", "israel")
     ircbot.installAction(say.Say())
     ircbot.installAction(bauer.Bauer())
     ircbot.installAction(tyme.Tyme())
@@ -128,5 +128,3 @@ while True:
     ircbot.run()
   except:
     pass
- 
-  

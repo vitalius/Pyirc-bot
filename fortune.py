@@ -16,17 +16,17 @@ class Fortune(action.Action):
         return None
 
     def parse(self, input):
-        m = re.search("~should", input)   
+        m = re.search("~should", str(input))
         if m != None:
             return self.rand()
 
-    	m = re.search("~would", input)
-	if m != None:
-	    return self.rand() 
-	    
-	m = re.search("~is", input)
-	if m != None:
-	    return self.rand()
+        m = re.search("~would", str(input))
+        if m != None:
+            return self.rand() 
+            
+        m = re.search("~is", str(input))
+        if m != None:
+            return self.rand()
 
         return None
 
@@ -34,4 +34,4 @@ class Fortune(action.Action):
     def rand(self):
         lst = ["Yes!", "Defenetly NO!", "Maybe...", "Ask me again, later"]
         return lst[random.randint(0,len(lst)-1)]
-	
+    

@@ -16,8 +16,8 @@ class Say(action.Action):
         return None
 
     def parse(self, input):
-        m = re.search("~say ", input)           # look for the '~say' flag
+        m = re.search("~say ", str(input).strip())           # look for the '~say' flag
         if m != None:
-            return input[m.end():len(input)]    # if found, return whatever follows after it
+            return input[m.end():len(input)].replace("\\r\\n\'","")    # if found, return whatever follows after it
         return None
 

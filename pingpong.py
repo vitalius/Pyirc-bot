@@ -4,7 +4,7 @@ import action
 class PingPong(action.Action):
 
     def perform(self, input):
-        m = re.search("^PING", input)
+        m = re.search("^.*PING", str(input))
         if m != None:
             return "PONG :" + input[6:len(input)]
         return None

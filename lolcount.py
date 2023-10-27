@@ -6,11 +6,7 @@ class lolCount(action.Action):
 
   def __init__(self):
     self.counterfile = "lolz.txt"
-    self.sponsors = ['Fo Shizzle mah Nizzle',
-                     'lantis\' EVE account',
-                     'Go|dfish Schnapps',
-                     'Mavez0r\'s CPU cooler',
-                     'PONNNIES!1!1!!']
+    self.sponsors = ['Baruh atah Adonai...']
     self.lolcount = self.readLolCount()
     
   def readLolCount(self):
@@ -27,12 +23,12 @@ class lolCount(action.Action):
 
   def perform(self, command):
     return self.getLols(command)
-	
+    
   #search for the string lol, if found increment variable and print count
-  def getLols(self, input):	
+  def getLols(self, input):    
     
     if (self.get_text(input) == None):
-	    return
+        return
           
     lol_list = ['lol', 'Lol', 'LOL', 'loL', 'lOl', 'lul', 'lawl', 'l0l']
     for i in lol_list:
