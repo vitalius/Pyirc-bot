@@ -39,8 +39,7 @@ class lolCount(action.Action):
       self.lolcount += 1
       self.writeLolCount(self.lolcount)
       if  re.search('~lolcount', self.get_text(input)) != None:
-        s = "This LOL count is sponsored by "
+        s = str(self.lolcount) + " - this LOL count is sponsored by "
         s += self.sponsors[random.randint(0,len(self.sponsors)-1)]
-        s += " (tm)(r)(lol). LOL count is " +str(self.lolcount)
         return self.ircfy(input, s)
     return     
